@@ -1,0 +1,11 @@
+---
+application:
+  name: "chatcord"
+  project: "hangout-v2"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-chatcord"
+  routes:
+  - application_name: "chatcord"
+    paths:
+    - "/*"
