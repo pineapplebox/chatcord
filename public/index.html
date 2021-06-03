@@ -4,6 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="description" content="Mockup online chat in node.">
+  		<meta name="keywords" content="HTML,CSS,XML,JavaScript">
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
@@ -19,7 +21,7 @@
 				<h1><i class="fas fa-smile"></i> Hangouts v2</h1>
 			</header>
 			<main class="join-main">
-				<form action="chat.html">
+				<form action="chat.html" onsubmit="genarate('hiddenField')" id="info">
 					<div class="form-control">
 						<label for="username">Username</label>
 						<input
@@ -27,6 +29,7 @@
 							name="username"
 							id="username"
 							placeholder="Enter username..."
+						        oninput="cacheInput(this)"
 							required
 						/>
 					</div>
@@ -37,11 +40,35 @@
               						id="room"
              						name="room"
               						placeholder="Enter Room Name..."
+						        oninput="cacheInput(this)"
               						required
             					/>
 					</div>
 					<button type="submit" class="btn">Join Chat</button>
 				</form>
+				<script>
+				function genarate(hiddenField) {
+  					var field = document.getElementById(hiddenField);
+  					field.value = "new Value";
+				}
+				function cacheInput(e) {
+    					localStorage.setItem(e.attributes["name"].value, e.value)
+				}
+				window.onload = function () {
+    					let form = document.getElementById("info");
+   					let inputs = form.children;
+    					for (let i = 0; i < inputs.length; i++) {
+        					let el = inputs[i];
+        					if (el.tagName.toLowerCase() != "input" || el.attributes["type"].value != "text") {
+            						continue
+        					}
+       						let cachedVal = localStorage.getItem(el.attributes["name"].value)
+        					if (cachedVal != null) {
+            						el.value = cachedVal;
+        					}
+    					}
+				}
+				</script>
 			</main>
 		</div>
 	</body>
