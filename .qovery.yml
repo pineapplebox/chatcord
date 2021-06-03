@@ -3,6 +3,8 @@ application:
   name: "chatcord"
   project: "hangout-v2"
   organization: "QoveryCommunity"
+  publicly_accessible: true
+  port: 8080
 routers:
 - name: "main-chatcord"
   routes:
