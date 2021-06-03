@@ -7,6 +7,9 @@ application:
   port: 3000
 routers:
 - name: "main-chatcord"
+  custom_domains:
+  - branch: master
+    domain: chat.usless.cloud
   routes:
   - application_name: "chatcord"
     paths:
