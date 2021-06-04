@@ -20,7 +20,7 @@
       </header>
       <main class="chat-main">
         <div class="chat-sidebar">
-          <h3><i class="fas fa-comments"></i> Room Name:</h3>
+          <h3><i class="fas fa-comments"></i> Room Code:</h3>
           <h2 id="room-name"></h2>
           <h3><i class="fas fa-users"></i> Users</h3>
           <ul id="users"></ul>
@@ -36,16 +36,18 @@
             required
             autocomplete="off"
           />
-          <button class="btn" id="emoji-button">😀</button>
           <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
         </form>
       </div>
     </div>
     <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        EmojiButton(document.querySelector('#emoji-button'), function (emoji) {
-          document.querySelector('input').value += emoji;
-        });
+      tinymce.init({
+        selector: "#msg",
+        plugins: "emoticons autoresize",
+        toolbar: "emoticons",
+        toolbar_location: "bottom",
+        menubar: false,
+        statusbar: false
       });
     </script>
     <script
@@ -54,7 +56,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emoji-button@0.6.0/dist/index.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   </body>
 </html>
