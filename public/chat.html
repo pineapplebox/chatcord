@@ -9,10 +9,8 @@
       integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
       crossorigin="anonymous"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
-    <script src="https://www.jqueryscript.net/demo/twemoji-emoji-keyboard/emoji_keyboard.js"></script>
-    <link rel="stylesheet" href="https://www.jqueryscript.net/demo/twemoji-emoji-keyboard/emoji_keyboard.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://onesignal.github.io/emoji-picker/lib/css/emoji.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
     <title>Hangouts v2</title>
   </head>
@@ -33,29 +31,24 @@
       </main>
       <div class="chat-form-container">
         <form id="chat-form">
-          <button id="emoji" class="btn" style="border: none; background-color: white;">&#128512;</button>
+          <button id="emoji" style="border: none; background-color: white;">&#128512;</button>
           <input
             id="msg"
             type="text"
             placeholder="Enter Message"
             required
             autocomplete="off"
+            data-emojiable="true"
+            data-emoji-input="unicode"
           />
           <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
         </form>
       </div>
     </div>
-    <script>
-      const zone = document.getElementById("msg");
-      var emojiKeyboard = new EmojiKeyboard;
-      emojiKeyboard.callback = (emoji, closed) => {
-        console.info(emoji, closed)
-        zone.innerText += emoji.emoji;
-      };
-      emojiKeyboard.resizable = true;
-      emojiKeyboard.default_placeholder = "Find emojis...";
-      emojiKeyboard.instantiate(document.getElementById("emoji"))
-    </script>
+    <script src="http://onesignal.github.io/emoji-picker/lib/js/config.js"></script>
+    <script src="http://onesignal.github.io/emoji-picker/lib/js/util.js"></script>
+    <script src="http://onesignal.github.io/emoji-picker/lib/js/jquery.emojiarea.js"></script>
+    <script src="http://onesignal.github.io/emoji-picker/lib/js/emoji-picker.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
       integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
