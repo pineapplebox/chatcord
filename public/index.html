@@ -63,9 +63,10 @@
   			var username = document.getElementById('username').value;
   			document.cookie = ("username=" + username);
 		}
-		window.onload = function () {
-			var username = getCookie("username");
-			document.getElementById("username").value = username;
-		}
+		//window.onload = function () {
+		//	var username = getCookie("username");
+		//	document.getElementById("username").value = username;
+		//}
+		// Chrome extension cant have persistent cookies; solution needed.
 		</script>
 </html>
