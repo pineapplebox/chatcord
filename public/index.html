@@ -21,7 +21,7 @@
 				<h1><i class="fas fa-smile"></i> Hangouts v2</h1>
 			</header>
 			<main class="join-main">
-				<form action="chat.html" onsubmit="genarate('hiddenField')" id="info">
+				<form action="chat.html" onsubmit="genarate('room')" id="info">
 					<div class="form-control">
 						<label for="username">Username</label>
 						<input
@@ -52,7 +52,7 @@
 	<script>
 		function genarate(hiddenField) {
   			var field = document.getElementById(hiddenField);
-  			field.value = "new Value";
+  			field.value += " ";
 		}
 		function cacheInput(e) {
     			localStorage.setItem(e.attributes["name"].value, e.value)
