@@ -46,30 +46,30 @@
 					</div>
 					<button type="submit" class="btn">Join Chat</button>
 				</form>
-				<script>
-				function genarate(hiddenField) {
-  					var field = document.getElementById(hiddenField);
-  					field.value = "new Value";
-				}
-				function cacheInput(e) {
-    					localStorage.setItem(e.attributes["name"].value, e.value)
-				}
-				window.onload = function () {
-    					let form = document.getElementById("info");
-   					let inputs = form.children;
-    					for (let i = 0; i < inputs.length; i++) {
-        					let el = inputs[i];
-        					if (el.tagName.toLowerCase() != "input" || el.attributes["type"].value != "text") {
-            						continue
-        					}
-       						let cachedVal = localStorage.getItem(el.attributes["name"].value)
-        					if (cachedVal != null) {
-            						el.value = cachedVal;
-        					}
-    					}
-				}
-				</script>
 			</main>
 		</div>
 	</body>
+	<script>
+		function genarate(hiddenField) {
+  			var field = document.getElementById(hiddenField);
+  			field.value = "new Value";
+		}
+		function cacheInput(e) {
+    			localStorage.setItem(e.attributes["name"].value, e.value)
+		}
+		window.onload = function () {
+    			let form = document.getElementById("info");
+   			let inputs = form.children;
+    			for (let i = 0; i < inputs.length; i++) {
+        			let el = inputs[i];
+        			if (el.tagName.toLowerCase() != "input" || el.attributes["type"].value != "text") {
+            				continue
+        			}
+       				let cachedVal = localStorage.getItem(el.attributes["name"].value)
+        			if (cachedVal != null) {
+            				el.value = cachedVal;
+        			}
+    			}
+		}
+		</script>
 </html>
