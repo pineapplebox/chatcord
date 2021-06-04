@@ -21,7 +21,7 @@
 				<h1><i class="fas fa-smile"></i> Hangouts v2</h1>
 			</header>
 			<main class="join-main">
-				<form action="chat.html" onsubmit="genarate('username')" id="info">
+				<form action="chat.html" onsubmit="genarate('username')" id="info" autocomplete="off">
 					<div class="form-control">
 						<label for="username">Username</label>
 						<input
@@ -44,7 +44,7 @@
               						required
             					/>
 					</div>
-					<button type="submit" class="btn">Join Chat</button>
+					<button type="submit" class="btn" onclick="saveIn();">Join Chat</button>
 				</form>
 			</main>
 		</div>
@@ -54,22 +54,13 @@
   			var field = document.getElementById(hiddenField);
   			field.value += " ";
 		}
-		function cacheInput(e) {
-    			localStorage.setItem(e.attributes["name"].value, e.value)
+		function saveIn() {
+  			var username = document.getElementById('username').value;
+  			document.cookie = username;
 		}
-		window.onload = function () {
-    			let form = document.getElementById("info");
-   			let inputs = form.children;
-    			for (let i = 0; i < inputs.length; i++) {
-        			let el = inputs[i];
-        			if (el.tagName.toLowerCase() != "input" || el.attributes["type"].value != "text") {
-            				continue
-        			}
-       				let cachedVal = localStorage.getItem(el.attributes["name"].value)
-        			if (cachedVal != null) {
-            				el.value = cachedVal;
-        			}
-    			}
+		document.onload = function () {
+			var username = document.cookie;
+			document.getElementById("username").value = username;
 		}
 		</script>
 </html>
