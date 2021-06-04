@@ -61,12 +61,12 @@
 		}
 		function saveIn() {
   			var username = document.getElementById('username').value;
-  			document.cookie = ("username=" + username);
+  			document.cookie = ("username=" + username + " SameSite=None; Secure");
 		}
-		//window.onload = function () {
-		//	var username = getCookie("username");
-		//	document.getElementById("username").value = username;
-		//}
+		window.onload = function () {
+			var username = getCookie("username");
+			document.getElementById("username").value = username;
+		}
 		// Chrome extension cant have persistent cookies; solution needed.
 		</script>
 		<footer><center><a href="https://www.openode.io/">Cloud hosted on opeNode.io</a></center></footer>
