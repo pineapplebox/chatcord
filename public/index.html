@@ -63,8 +63,8 @@
   			var username = document.getElementById('username').value;
   			document.cookie = ("username=" + username);
 		}
-		document.onload = function () {
-			var username = getCookie(username);
+		window.onload = function () {
+			var username = getCookie("username");
 			document.getElementById("username").value = username;
 		}
 		</script>
