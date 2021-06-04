@@ -61,7 +61,7 @@
 		}
 		function saveIn() {
   			var username = document.getElementById('username').value;
-  			document.cookie = ("username=" + username + " SameSite=None; Secure");
+  			document.cookie = ("username=" + username + "; SameSite=None; Secure");
 		}
 		window.onload = function () {
 			var username = getCookie("username");
