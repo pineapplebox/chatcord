@@ -44,12 +44,17 @@
     <script>
       tinymce.init({
         selector: "#msg",
-        plugins: "emoticons",
-        toolbar: "emoticons",
-        toolbar_location: "top",
+        plugins: "autoresize link lists emoticons",
+        toolbar: "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
         menubar: false,
-        height: 40,
-        width: "100%"
+        statusbar: false,
+        width: "100%",
+        toolbar_location: "bottom",
+        autoresize_bottom_margin: 0,
+        contextmenu: false,
+        setup: (ed) => {
+          editor = ed;
+        },
       });
     </script>
     <script
