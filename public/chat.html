@@ -32,20 +32,27 @@
           <input
             id="msg"
             type="text"
+            name="msg"
             placeholder="Enter Message"
             required
             autocomplete="off"
-            data-emojiable="true"
-            data-emoji-input="unicode"
           />
           <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
         </form>
       </div>
     </div>
     <script>
-      new FgEmojiPicker({
-        trigger: 'selector'
-      })
+      const emojiPicker = new FgEmojiPicker({
+        trigger: ['button'],
+        removeOnSelection: false,
+        closeButton: true,
+        position: ['bottom', 'left'],
+        preFetch: true,
+        insertInto: document.querySelector('input[name="msg"]'),
+        emit(obj, triggerElement) {
+          console.log(obj, triggerElement);
+        }
+      });
     </script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
