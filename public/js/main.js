@@ -33,7 +33,7 @@ tinymce.init({
   menubar: false,
   statusbar: false,
   width: "100%",
-  max_height: 135,
+  max_height: 130,
   toolbar_location: "bottom",
   autoresize_bottom_margin: 0,
   contextmenu: false,
