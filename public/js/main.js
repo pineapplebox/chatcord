@@ -19,7 +19,7 @@ tinymce.init({
 	setup: function (editor) {
     editor.ui.registry.addButton("mySendButton", {
       tooltip: "Send Message",
-	  text: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Font_Awesome_5_solid_paper-plane.svg/1200px-Font_Awesome_5_solid_paper-plane.svg.png" alt="" width="14" height="14"> Send',
+	  text: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Font_Awesome_5_solid_paper-plane.svg/1200px-Font_Awesome_5_solid_paper-plane.svg.png" alt="" width="14px" height="14px"> Send',
       onAction: function () {
         if (!editor.getContent()) {
           return false;
