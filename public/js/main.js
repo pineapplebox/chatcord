@@ -88,7 +88,7 @@ function outputMessage(message) {
   div.appendChild(p);
   const para = document.createElement('div');
   para.classList.add('text');
-  para.innerText = message.text;
+  para.innerHTML = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
 }
