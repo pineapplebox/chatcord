@@ -18,7 +18,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	background: var(--light-color);
-	margin: 20px;
+	margin: 15px;
 }
 
 ul {
@@ -88,7 +88,7 @@ a {
 
 .chat-messages {
 	padding: 30px;
-	max-height: 300px;
+	max-height: 295px;
 	max-width: 825px;
 	overflow-y: scroll;
 }
