@@ -23,7 +23,6 @@
 							name="username"
 							id="username"
 							placeholder="Enter username..."
-						        oninput="cacheInput(this)"
 							required
 						/>
 					</div>
@@ -34,7 +33,6 @@
               						id="room"
              						name="room"
               						placeholder="Enter Room Code..."
-						        oninput="cacheInput(this)"
               						required
             					/>
 					</div>
@@ -58,7 +56,7 @@
   			document.cookie = ("username=" + username + "; SameSite=None; Secure");
 		}
 		window.onload = function () {
-			if(getCookie("username") !== "undefined") {
+			if(getCookie("username") !== undefined) {
 				var username = getCookie("username");
 				document.getElementById("username").value = username;
 			}
