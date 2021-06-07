@@ -9,12 +9,27 @@ const { username, room } = Qs.parse(location.search, {
 });
 
 const socket = io();
+var msgcont;
 
 // Init TinyMCE plugin
 tinymce.init({
   selector: "#msg",
   plugins: "autoresize link lists emoticons",
-  toolbar: "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
+  toolbar: "bold italic underline strikethrough | forecolor | link blockquote emoticons image | mySendButton",
+	setup: function (editor) {
+    editor.ui.registry.addButton("mySendButton", {
+      tooltip: "Send Message",
+	  text: "<i class='fas fa-paper-plane' style='font-size: 14px;'></i>Send",
+      onAction: function () {
+        if (!editor.getContent()) {
+          return false;
+        }
+        socket.emit('chatMessage', editor.getContent());
+		    editor.resetContent();
+      }
+    });
+  },
+  skin: "borderless",
   menubar: false,
   statusbar: false,
   width: "100%",
@@ -45,7 +60,7 @@ socket.on('message', (message) => {
 });
 
 // Message submit
-chatForm.addEventListener('submit', (e) => {
+/*chatForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   // Get message text
@@ -62,7 +77,7 @@ chatForm.addEventListener('submit', (e) => {
 
   // Clear input
   tinyMCE.get('msg').setContent('');
-});
+});*/
 
 // Output message to DOM
 // Add noscript to prevent xss
