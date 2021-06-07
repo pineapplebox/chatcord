@@ -14,7 +14,7 @@ var msgcont;
 // Init TinyMCE plugin
 tinymce.init({
   selector: "#msg",
-  plugins: "autoresize link lists emoticons",
+  plugins: "autoresize link lists emoticons image",
   toolbar: "bold italic underline strikethrough | forecolor | link blockquote emoticons image | mySendButton",
 	setup: function (editor) {
     editor.ui.registry.addButton("mySendButton", {
@@ -36,9 +36,6 @@ tinymce.init({
   toolbar_location: "bottom",
   autoresize_bottom_margin: 0,
   contextmenu: false,
-  setup: (ed) => {
-    editor = ed;
-  },
 });
 
 // Join chatroom
