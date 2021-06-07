@@ -19,7 +19,7 @@ tinymce.init({
 	setup: function (editor) {
     editor.ui.registry.addButton("mySendButton", {
       tooltip: "Send Message",
-	  text: "Send",
+	  text: "<i class="fas fa-paper-plane" style="font-size:14px;"></i>Send",
       onAction: function () {
         if (!editor.getContent()) {
           return false;
@@ -86,7 +86,7 @@ function outputMessage(message) {
   p.innerText = message.username;
   p.innerHTML += `<span>${message.time}</span>`;
   div.appendChild(p);
-  const para = document.createElement('noscript');
+  const para = document.createElement('div');
   para.classList.add('text');
   para.innerText = message.text;
   div.appendChild(para);
