@@ -44,7 +44,7 @@
               						required
             					/>
 					</div>
-					<button type="submit" class="btn" onclick="saveIn();">Join Chat</button>
+					<button type="submit" class="btn" onclick="saveIn();" style="padding-top: 8px; padding-bottom: 8px;">Join Chat</button>
 				</form>
 			</main>
 		</div>
@@ -64,8 +64,10 @@
   			document.cookie = ("username=" + username + "; SameSite=None; Secure");
 		}
 		window.onload = function () {
-			var username = getCookie("username");
-			document.getElementById("username").value = username;
+			if(getCookie("username") !== null) {
+				var username = getCookie("username");
+				document.getElementById("username").value = username;
+			}
 		}
 		// Chrome extension cant have persistent cookies; solution needed.
 		</script>
