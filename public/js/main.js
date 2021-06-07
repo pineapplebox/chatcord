@@ -19,7 +19,7 @@ tinymce.init({
 	setup: function (editor) {
     editor.ui.registry.addButton("mySendButton", {
       tooltip: "Send Message",
-	  text: "<i class='fas fa-paper-plane' style='font-size:14px;'></i>Send",
+	  text: '<i class="fa fa-paper-plane" style="font-size:14px;"></i> Send',
       onAction: function () {
         if (!editor.getContent()) {
           return false;
