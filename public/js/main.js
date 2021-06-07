@@ -86,10 +86,10 @@ function outputMessage(message) {
   p.innerText = message.username;
   p.innerHTML += `<span>${message.time}</span>`;
   div.appendChild(p);
-  /*const para = document.createElement('div');
+  const para = document.createElement('div');
   para.classList.add('text');
   para.innerText = message.text;*/
-  div.appendChild(message.text);
+  div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
 }
 
