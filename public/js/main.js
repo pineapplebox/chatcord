@@ -10,6 +10,22 @@ const { username, room } = Qs.parse(location.search, {
 
 const socket = io();
 
+// Init TinyMCE plugin
+tinymce.init({
+  selector: "#msg",
+  plugins: "autoresize link lists emoticons",
+  toolbar: "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
+  menubar: false,
+  statusbar: false,
+  width: "100%",
+  toolbar_location: "bottom",
+  autoresize_bottom_margin: 0,
+  contextmenu: false,
+  setup: (ed) => {
+    editor = ed;
+  },
+});
+
 // Join chatroom
 socket.emit('joinRoom', { username, room });
 
@@ -33,7 +49,7 @@ chatForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   // Get message text
-  let msg = e.target.elements.msg.value;
+  let msg = tinyMCE.get('msg').getContent();
 
   msg = msg.trim();
 
@@ -45,8 +61,8 @@ chatForm.addEventListener('submit', (e) => {
   socket.emit('chatMessage', msg);
 
   // Clear input
-  e.target.elements.msg.value = '';
-  e.target.elements.msg.focus();
+  tinyMCE.activeEditor.setContent('');
+  tinyMCE.activeEditor.focus();
 });
 
 // Output message to DOM
