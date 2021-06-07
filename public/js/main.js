@@ -13,7 +13,7 @@ const socket = io();
 // Init TinyMCE plugin
 tinymce.init({
   selector: "#msg",
-  content_css: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css',
+  content_style: 'img {max-width: 600px;}',
   plugins: "autoresize link lists emoticons image",
   toolbar: "bold italic underline strikethrough | forecolor | link blockquote emoticons image | mySendButton",
 	setup: function (editor) {
