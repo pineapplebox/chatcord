@@ -51,7 +51,7 @@ chatForm.addEventListener('submit', (e) => {
   // Get message text
   let msg = tinyMCE.get('msg').getContent();
   
-  alert(msg)
+  alert(msg);
 
   if (!msg) {
     return false;
