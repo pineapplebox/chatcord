@@ -50,6 +50,8 @@ chatForm.addEventListener('submit', (e) => {
 
   // Get message text
   let msg = tinyMCE.get('msg').getContent();
+  
+  alert(msg)
 
   if (!msg) {
     return false;
@@ -63,6 +65,7 @@ chatForm.addEventListener('submit', (e) => {
 });
 
 // Output message to DOM
+// Add noscript to prevent xss
 function outputMessage(message) {
   const div = document.createElement('div');
   div.classList.add('message');
