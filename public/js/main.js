@@ -61,8 +61,8 @@ chatForm.addEventListener('submit', (e) => {
   socket.emit('chatMessage', msg);
 
   // Clear input
-  tinyMCE.activeEditor.setContent('');
-  tinyMCE.activeEditor.focus();
+  tinyMCE.get('msg').setContent('');
+  tinyMCE.get('msg').focus();
 });
 
 // Output message to DOM
