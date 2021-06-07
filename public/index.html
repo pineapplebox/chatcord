@@ -58,7 +58,7 @@
   			document.cookie = ("username=" + username + "; SameSite=None; Secure");
 		}
 		window.onload = function () {
-			if(getCookie("username") !== null) {
+			if(getCookie("username") !== "undefined") {
 				var username = getCookie("username");
 				document.getElementById("username").value = username;
 			}
