@@ -51,8 +51,6 @@ chatForm.addEventListener('submit', (e) => {
   // Get message text
   let msg = tinyMCE.get('msg').getContent();
 
-  msg = msg.trim();
-
   if (!msg) {
     return false;
   }
@@ -62,7 +60,6 @@ chatForm.addEventListener('submit', (e) => {
 
   // Clear input
   tinyMCE.get('msg').setContent('');
-  tinyMCE.get('msg').focus();
 });
 
 // Output message to DOM
