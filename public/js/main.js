@@ -10,8 +10,6 @@ const { username, room } = Qs.parse(location.search, {
 
 const socket = io();
 
-window.addEventListener('keydown',function(e){if(e.which == 13 && e.shiftKey){return false;}else if(e.keyCode==13){e.preventDefault();return false;}},true);
-
 // Init TinyMCE plugin
 tinymce.init({
   selector: "#msg",
@@ -50,6 +48,8 @@ tinymce.init({
   autoresize_bottom_margin: 0,
   contextmenu: false,
 });
+
+tinymce.ScriptLoader.load('noenter.js');
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
