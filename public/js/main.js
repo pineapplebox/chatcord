@@ -10,6 +10,8 @@ const { username, room } = Qs.parse(location.search, {
 
 const socket = io();
 
+window.addEventListener('keydown',function(e){if(e.which == 13 && e.shiftKey){return false;}else if(e.keyCode==13){e.preventDefault();return false;}}},true);
+
 // Init TinyMCE plugin
 tinymce.init({
   selector: "#msg",
@@ -33,11 +35,9 @@ tinymce.init({
       if(e.shiftKey && e.keyCode == 13) {
         return;
       } else if(e.keyCode == 13) {
-	e.preventDefault();
 	socket.emit('chatMessage', editor.getContent());
 	editor.resetContent();
 	editor.focus();
-	return false;
       }
     });
   },
