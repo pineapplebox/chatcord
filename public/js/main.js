@@ -33,6 +33,7 @@ tinymce.init({
       if(e.shiftKey && e.keyCode == 13) {
         return;
       } else if(e.keyCode == 13) {
+	e.preventDefault();
 	socket.emit('chatMessage', editor.getContent());
 	editor.resetContent();
 	editor.focus();
