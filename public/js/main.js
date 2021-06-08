@@ -16,21 +16,19 @@ tinymce.init({
   content_style: 'img {max-width: 600px;}',
   plugins: "autoresize link lists emoticons image",
   toolbar: "bold italic underline strikethrough | forecolor | link blockquote emoticons image | mySendButton",
-	setup: function (editor) {
+  setup: function (editor) {
     editor.ui.registry.addButton("mySendButton", {
       tooltip: "Send Message",
-	  text: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Font_Awesome_5_solid_paper-plane.svg/1200px-Font_Awesome_5_solid_paper-plane.svg.png" alt="" style="width: 13px; height: 13px;"> <b style="font-size: 16px; position: relative; top: -1px;">Send</b>',
+      text: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Font_Awesome_5_solid_paper-plane.svg/1200px-Font_Awesome_5_solid_paper-plane.svg.png" alt="" style="width: 13px; height: 13px;"> <b style="font-size: 16px; position: relative; top: -1px;">Send</b>',
       onAction: function () {
         if (!editor.getContent()) {
           return false;
         }
         socket.emit('chatMessage', editor.getContent());
-	editor.resetContent();
-	editor.focus();
+        editor.resetContent();
+        editor.focus();
       }
     });
-  },
-  setup: function (editor) {
     editor.on('keyup', function (e) {
       if(e.shiftKey && e.keyCode == 13) {
         return;
