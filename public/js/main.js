@@ -25,8 +25,21 @@ tinymce.init({
           return false;
         }
         socket.emit('chatMessage', editor.getContent());
-		    editor.resetContent();
+	editor.resetContent();
+	editor.focus();
       }
+    });
+  },
+  setup : function(ed) {
+    ed.onKeyPress.add(
+      function (ed, evt) {
+        if(evt.shiftKey && evt.keyCode == 13) {
+          return;
+        } else if(evt.keyCode == 13) {
+	  socket.emit('chatMessage', editor.getContent());
+	  editor.resetContent();
+	  editor.focus();
+	}
     });
   },
   skin: "borderless",
