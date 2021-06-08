@@ -10,7 +10,7 @@ const { username, room } = Qs.parse(location.search, {
 
 const socket = io();
 
-window.addEventListener('keydown',function(e){if(e.which == 13 && e.shiftKey){return false;}else if(e.keyCode==13){e.preventDefault();return false;}}},true);
+window.addEventListener('keydown',function(e){if(e.which == 13 && e.shiftKey){return false;}else if(e.keyCode==13){e.preventDefault();return false;}},true);
 
 // Init TinyMCE plugin
 tinymce.init({
