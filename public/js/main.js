@@ -49,7 +49,7 @@ tinymce.init({
   contextmenu: false,
 });
 
-tinymce.ScriptLoader.load('noenter.js');
+tinymce.ScriptLoader.load('./noenter.js');
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
