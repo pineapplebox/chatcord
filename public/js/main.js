@@ -36,6 +36,9 @@ tinymce.init({
 	socket.emit('chatMessage', editor.getContent());
 	editor.resetContent();
 	editor.focus();
+	e.preventDefault();
+	e.stopPropagation();
+	return false;
       }
     });
   },
@@ -48,8 +51,6 @@ tinymce.init({
   autoresize_bottom_margin: 0,
   contextmenu: false,
 });
-
-tinymce.ScriptLoader.load('./js/noenter.js');
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
