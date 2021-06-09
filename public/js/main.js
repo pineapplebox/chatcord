@@ -30,15 +30,17 @@ tinymce.init({
       }
     });
     editor.on('keyup', function (e) {
-      if(e.shiftKey && e.keyCode == 13) {
-        return;
-      } else if(e.keyCode == 13) {
-	e.preventDefault();
-	e.stopPropagation();
-	socket.emit('chatMessage', editor.getContent());
-	editor.resetContent();
-	editor.focus();
-	return false;
+      if(e.keyCode == 13) {
+        if(e.shiftKey) {
+          return;
+        } else {
+	  e.preventDefault();
+	  e.stopPropagation();
+	  return false;
+	  socket.emit('chatMessage', editor.getContent());
+	  editor.resetContent();
+	  editor.focus();
+	}
       }
     });
   },
