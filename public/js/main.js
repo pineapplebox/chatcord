@@ -30,13 +30,11 @@ tinymce.init({
       }
     });
     editor.on('keyup', function (e) {
-      if(e.keyCode == 13) {
-        if(e.shiftKey) {
+      if(e.keyCode == 13 && e.shiftKey) {
           return;
-        } else {
+        } else if(e.keyCode == 13) {
 	  e.preventDefault();
 	  e.stopPropagation();
-	  return false;
 	  socket.emit('chatMessage', editor.getContent());
 	  editor.resetContent();
 	  editor.focus();
