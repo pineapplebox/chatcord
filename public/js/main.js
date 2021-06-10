@@ -40,7 +40,6 @@ tinymce.init({
 	  e.stopPropagation();
           return false;
 	}
-      }
     });
   },
   skin: "borderless",
