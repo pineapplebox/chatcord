@@ -30,16 +30,16 @@ tinymce.init({
       }
     });
     editor.on('keydown', function (e) {
-      if(e.keyCode == 13 && e.shiftKey) {
-        return;
-      } else if(e.keyCode == 13) {
-	      e.preventDefault();
-	      e.stopPropagation();
-	      socket.emit('chatMessage', editor.getContent());
-	      editor.resetContent();
-	      editor.focus();
-              return false;
-	    }
+      if(e.keyCode == 13 && !e.shiftKey) {
+	e.preventDefault();
+	e.stopPropagation();
+	socket.emit('chatMessage', editor.getContent());
+	editor.resetContent();
+	editor.focus();
+        return false;
+      } //else {
+        //socket.emit('isTyping', );
+      //}
     });
   },
   skin: "borderless",
