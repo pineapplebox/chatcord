@@ -38,7 +38,7 @@ tinymce.init({
 	      socket.emit('chatMessage', editor.getContent());
 	      editor.resetContent();
 	      editor.focus();
-        return false;
+              return false;
 	    }
     });
   },
