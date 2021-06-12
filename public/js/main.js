@@ -9,6 +9,7 @@ const { username, room } = Qs.parse(location.search, {
 });
 
 const socket = io();
+var TypeMs = Date.now();
 
 // Init TinyMCE plugin
 tinymce.init({
@@ -37,9 +38,10 @@ tinymce.init({
 	editor.resetContent();
 	editor.focus();
         return false;
-      } //else {
-        //socket.emit('isTyping', );
-      //}
+      } else {
+        socket.emit('isTyping', true);
+	TypeMs = Date.now();
+      }
     });
   },
   skin: "borderless",
@@ -51,6 +53,9 @@ tinymce.init({
   autoresize_bottom_margin: 0,
   contextmenu: false,
 });
+
+// Check whether user is typing
+setInterval(function(){ var curTime = Date.now(); if (curTime - TypeMs > 20000) {socket.emit('isTyping', false);} }, 10000);
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
