@@ -29,18 +29,8 @@ tinymce.init({
         editor.focus();
       }
     });
-    editor.on('keyup', function (e) {
-      if(e.keyCode == 13 && e.shiftKey) {
-          return;
-        } else if(e.keyCode == 13) {
-	  socket.emit('chatMessage', editor.getContent());
-	  editor.resetContent();
-	  editor.focus();
-	  e.preventDefault();
-	  e.stopPropagation();
-          return false;
-	}
-    });
+    //socket.emit('chatMessage', editor.getContent());
+    editor.contentDocument.addEventListener('keydown',function(e){if(e.which == 13 && e.shiftKey){return false;}else if(e.keyCode==13){editor.resetContent();editor.focus();e.preventDefault();e.stopPropagation();return true;}},true);
   },
   skin: "borderless",
   menubar: false,
