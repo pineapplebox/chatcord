@@ -26,6 +26,8 @@ tinymce.init({
           return false;
         }
         socket.emit('chatMessage', editor.getContent());
+        socket.emit('isTyping', false);
+	TypeMs = 0;
         editor.resetContent();
         editor.focus();
       }
@@ -38,6 +40,8 @@ tinymce.init({
           return false;
         }
 	socket.emit('chatMessage', editor.getContent());
+        socket.emit('isTyping', false);
+	TypeMs = 0;
 	editor.resetContent();
 	editor.focus();
         return false;
