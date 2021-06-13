@@ -66,6 +66,11 @@ socket.on('roomUsers', ({ room, users }) => {
   outputUsers(users);
 });
 
+//get isTyping info
+socket.on('isTyping', ({ name, typing }) => {
+  console.log('User: ' + name + 'is typing? ' + typing);
+});
+
 // Message from server
 socket.on('message', (message) => {
   console.log(message);
