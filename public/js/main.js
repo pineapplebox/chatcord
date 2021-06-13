@@ -39,7 +39,7 @@ tinymce.init({
 	editor.focus();
         return false;
       } else {
-        socket.emit('isTyping', { username, true });
+        socket.emit('isTyping', true);
 	TypeMs = Date.now();
       }
     });
@@ -55,7 +55,7 @@ tinymce.init({
 });
 
 // Check whether user is typing
-setInterval(function(){ var curTime = Date.now(); if (curTime - TypeMs > 20000) {socket.emit('isTyping', { username, false} );} }, 10000);
+setInterval(function(){ var curTime = Date.now(); if (curTime - TypeMs > 20000) {socket.emit('isTyping', false);} }, 10000);
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
