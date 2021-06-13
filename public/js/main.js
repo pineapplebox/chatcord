@@ -39,7 +39,7 @@ tinymce.init({
 	editor.focus();
         return false;
       } else {
-	if (TypeMS == 0) {
+	if (TypeMs == 0) {
            socket.emit('isTyping', true);
 	}
 	TypeMs = Date.now();
