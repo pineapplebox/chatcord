@@ -29,14 +29,7 @@ tinymce.init({
       if(e.keyCode == 13 && !e.shiftKey) {
 	e.preventDefault();
 	e.stopPropagation();
-        if (!editor.getContent().trim()) {
-          return false;
-        }
-	socket.emit('chatMessage', editor.getContent());
-        socket.emit('isTyping', false);
-	TypeMs = 0;
-	editor.resetContent();
-	editor.focus();
+        sendMsg(editor);
         return false;
       } else {
 	if (TypeMs == 0) {
