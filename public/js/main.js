@@ -55,7 +55,7 @@ tinymce.init({
 });
 
 // Check whether user is typing
-setInterval(function(){ var curTime = Date.now(); if (curTime - TypeMs > 20000) {socket.emit('isTyping', false);} }, 10000);
+setInterval(function(){ var curTime = Date.now(); if (TypeMs > 0 && curTime - TypeMs > 20000) {TypeMs = 0; socket.emit('isTyping', false);} }, 10000);
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
