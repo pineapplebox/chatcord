@@ -63,7 +63,19 @@ socket.on('roomUsers', ({ room, users }) => {
 
 //get isTyping info
 socket.on('isTyping', ({ name, typing }) => {
-  console.log('User: ' + name + 'is typing? ' + typing);
+  //console.log('User: ' + name + 'is typing? ' + typing);
+  
+  var typeUsers = [];
+  if ( typing == true ) {
+    typeUsers.push(name);
+    console.log(typeUsers)
+  } else if ( typing == false ) { 
+    var index = typeUsers.indexOf(name);
+    if (index > -1) {
+      typeUsers.splice(index, 1);
+    }
+  console.log(typeUsers)
+  }
 });
 
 // Message from server
