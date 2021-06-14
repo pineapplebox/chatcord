@@ -10,6 +10,7 @@ const { username, room } = Qs.parse(location.search, {
 
 const socket = io();
 var TypeMs = 0;
+var typeUsers = [];
 
 // Init TinyMCE plugin
 tinymce.init({
@@ -65,7 +66,6 @@ socket.on('roomUsers', ({ room, users }) => {
 socket.on('isTyping', ({ name, typing }) => {
   //console.log('User: ' + name + 'is typing? ' + typing);
   
-  var typeUsers = [];
   if ( typing == true ) {
     typeUsers.push(name);
   } else if ( typing == false ) { 
