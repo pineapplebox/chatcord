@@ -16,6 +16,7 @@ var typeUsers = [];
 tinymce.init({
   selector: "#msg",
   content_style: 'img {max-width: 600px;}',
+  auto_focus : "msg",
   plugins: "autoresize link lists emoticons image",
   toolbar: "bold italic underline strikethrough | forecolor | link blockquote emoticons image | mySendButton",
   setup: function (editor) {
@@ -82,7 +83,7 @@ socket.on('isTyping', ({ name, typing }) => {
   } else if (typeUsers.length == 2 || typeUsers.length > 2) {
     console.log(typeUsers[0] + "and " + (typeUsers.length - 1) + " others are typing")
   }
-  });
+});
 
 // Message from server
 socket.on('message', (message) => {
