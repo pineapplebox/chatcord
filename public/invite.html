@@ -22,7 +22,7 @@
                                 <h2>You've been invited to join a room</h2>
 			</header>
 			<main class="join-main">
-				<form onsubmit="submitInv()" id="info" autocomplete="off">
+				<form onsubmit="submitInv();" id="info" autocomplete="off">
 					<div class="form-control">
 						<label for="username">Username</label>
 						<input
@@ -58,6 +58,7 @@
 		function saveIn() {
   			var username = document.getElementById('username').value;
   			document.cookie = ("username=" + username + "; SameSite=None; Secure");
+			submitInv();
 		}
 		window.onload = function () {
 			if(getCookie("username") !== undefined) {
