@@ -22,27 +22,20 @@
                                 <h2>You've been invited to join a room</h2>
 			</header>
 			<main class="join-main">
-				<form onsubmit="submitInv();" id="info" autocomplete="off">
-					<div class="form-control">
-						<label for="username">Username</label>
-						<input
-							type="text"
-							name="username"
-							id="username"
-							placeholder="Enter username..."
-							required
-						/>
-					</div>
-					<button type="submit" class="btn" onclick="saveIn();" style="padding-top: 8px; padding-bottom: 8px;">Join Chat</button>
-				</form>
+				<div class="form-control">
+					<label for="username">Username</label>
+					<input
+						type="text"
+						name="username"
+						id="username"
+						placeholder="Enter username..."
+						required
+					/>
+				</div>
+				<button type="submit" class="btn" onclick="saveIn();" style="padding-top: 8px; padding-bottom: 8px;">Join Chat</button>
 			</main>
 		</div>
 	</body>
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
-          integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
-          crossorigin="anonymous"
-        ></script>
 	<script>
                 var url = new URL(window.location);
                 var room = url.searchParams.get("room");
