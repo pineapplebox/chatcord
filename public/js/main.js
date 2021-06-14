@@ -78,9 +78,9 @@ socket.on('isTyping', ({ name, typing }) => {
   if (typeUsers.length == 0) {
     console.log("No users typing");
   } else if (typeUsers.length == 1) {
-    console.log(typeUsers[1] + "is typing");
+    console.log(typeUsers[0] + "is typing");
   } else if (typeUsers.length == 2 || typeUsers.length > 2) {
-    console.log(typeUsers[1] + "and " + (typeUsers.length - 1) + " others are typing")
+    console.log(typeUsers[0] + "and " + (typeUsers.length - 1) + " others are typing")
   }
   });
 
