@@ -68,15 +68,21 @@ socket.on('isTyping', ({ name, typing }) => {
   var typeUsers = [];
   if ( typing == true ) {
     typeUsers.push(name);
-    console.log(typeUsers)
   } else if ( typing == false ) { 
     var index = typeUsers.indexOf(name);
     if (index > -1) {
       typeUsers.splice(index, 1);
     }
-  console.log(typeUsers)
   }
-});
+	
+  if (typeUsers.length == 0) {
+    console.log("No users typing");
+  } else if (typeUsers.length == 1) {
+    console.log(name + " is typing");
+  } else if (typeUsers.length >= 2) {
+    console.log(name + " and " + typeUsers.length + "others are typing")
+  }
+  });
 
 // Message from server
 socket.on('message', (message) => {
