@@ -22,7 +22,7 @@
                                 <h2>You've been invited to join a room</h2>
 			</header>
 			<main class="join-main">
-				<form action="chat.html" onsubmit="submitInv()" id="info" autocomplete="off">
+				<form onsubmit="submitInv()" id="info" autocomplete="off">
 					<div class="form-control">
 						<label for="username">Username</label>
 						<input
@@ -44,9 +44,8 @@
           crossorigin="anonymous"
         ></script>
 	<script>
-                var room = Qs.parse(location.search, {
-                  ignoreQueryPrefix: true,
-                });
+                var url = new URL(window.location);
+                var room = url.searchParams.get("room");
 		function getCookie(name) {
   			const value = `; ${document.cookie}`;
   			const parts = value.split(`; ${name}=`);
