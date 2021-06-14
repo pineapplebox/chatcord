@@ -44,7 +44,7 @@
           crossorigin="anonymous"
         ></script>
 	<script>
-                const { room } = Qs.parse(location.search, {
+                var room = Qs.parse(location.search, {
                   ignoreQueryPrefix: true,
                 });
 		function getCookie(name) {
