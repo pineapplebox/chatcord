@@ -13,7 +13,7 @@
 		<div class="join-container">
 			<header class="join-header">
 				<h1><i class="fas fa-smile"></i> Hangouts v2</h1><br />
-        <h2>You've been invited to join a room</h2>
+                                <h2>You've been invited to join a room</h2>
 			</header>
 			<main class="join-main">
 				<form action="chat.html" onsubmit="submitInv()" id="info" autocomplete="off">
@@ -33,9 +33,9 @@
 		</div>
 	</body>
 	<script>
-    const { room } = Qs.parse(location.search, {
-      ignoreQueryPrefix: true,
-    });
+                const { room } = Qs.parse(location.search, {
+                  ignoreQueryPrefix: true,
+                });
 		function getCookie(name) {
   			const value = `; ${document.cookie}`;
   			const parts = value.split(`; ${name}=`);
