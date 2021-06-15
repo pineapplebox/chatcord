@@ -134,7 +134,7 @@ function outputMessage(message) {
 
 // Add room name to DOM
 function outputRoomName(room) {
-  roomName.innerHTML = '<input type="password" readonly="true" value="' + room + '" style="border: none; outline: none; background-color: transparent; font-size: 16px;"/ >';
+  roomName.innerHTML = '<input type="password" readonly="true" value="' + room + '" style="border: none; outline: none; background-color: transparent; font-size: 16px; color: white;"/ >';
 }
 
 // Add users to DOM
