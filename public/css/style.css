@@ -131,10 +131,19 @@ a {
 	border: none;
 }
 
-#togglePassword {
+#toggleName {
 	float: right;
 	cursor: pointer;
 	font-size: 20px;
+	color: white;
+}
+
+#room-name-text {
+	border: none;
+	outline: none; 
+	background-color: transparent;
+	font-size: 16px;
+	color: white;
 }
 
 /* Join Page */
