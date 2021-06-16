@@ -131,6 +131,12 @@ a {
 	border: none;
 }
 
+#togglePassword {
+	float: right;
+	cursor: pointer;
+	font-size: 20px;
+}
+
 /* Join Page */
 .join-container {
 	max-width: 500px;
