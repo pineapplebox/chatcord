@@ -171,9 +171,8 @@ window.onload = function() {
   const nameText = document.querySelector('#room-name-text');
 
   function toggleCode(e) {
-    const tgt = e.target.firstElementChild;
     const type = nameText.getAttribute('type') === 'password' ? 'text' : 'password';
     nameText.setAttribute('type', type);
-    tgt.classList.toggle('fa-eye');
+    document.getElementById("toggleName").classList.toggle('fa-eye');
   }
 }
