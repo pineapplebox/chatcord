@@ -10,7 +10,6 @@ Go to localhost:3000
 ```
 
 ## Notes
-The *_html_css* folder is just a starter template to follow along with the tutorial at https://www.youtube.com/watch?v=jD7FnbI76Hg&t=1339s. It is not part of the app
 
 This is a fork, with many added features.
 https://hangoutsv2.openode.io/
