@@ -77,6 +77,7 @@ a {
 	background: rgba(0, 0, 0, 0.1);
 	padding: 10px;
 	margin-bottom: 20px;
+	min-height: 38px;
 }
 
 .chat-sidebar h3 {
@@ -145,6 +146,8 @@ a {
 	background-color: transparent;
 	font-size: 16px;
 	color: white;
+	position: absolute;
+	max-width: 100px;
 }
 
 /* Join Page */
