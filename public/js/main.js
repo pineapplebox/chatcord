@@ -167,8 +167,8 @@ function sendMsg(editor) {
   editor.focus();
 }
 
-const nameText = document.getElementById('room-name-text');
-const toggleName = document.getElementById('toggleName');
+const nameText = document.querySelector('#room-name-text');
+const toggleName = document.querySelector('#toggleName');
 
 toggleName.addEventListener('click', function (e) {
     const type = nameText.getAttribute('type') === 'password' ? 'text' : 'password';
