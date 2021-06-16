@@ -167,11 +167,13 @@ function sendMsg(editor) {
   editor.focus();
 }
 
-const nameText = document.querySelector('#room-name-text');
-const toggleName = document.querySelector('#toggleName');
+window.onload = function () {
+  const nameText = document.querySelector('#room-name-text');
+  const toggleName = document.querySelector('#toggleName');
 
-toggleName.addEventListener('click', function (e) {
+  toggleName.addEventListener('click', function (e) {
     const type = nameText.getAttribute('type') === 'password' ? 'text' : 'password';
     nameText.setAttribute('type', type);
     this.classList.toggle('fa-eye');
-});
+  });
+}
