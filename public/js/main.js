@@ -166,13 +166,14 @@ function sendMsg(editor) {
   editor.resetContent();
   editor.focus();
 }
+window.onload = function() {
+  document.querySelector('#toggleName').addEventListener('click', toggleCode);
+  const nameText = document.querySelector('#room-name-text');
 
-document.querySelector('#toggleName').addEventListener('click', toggleCode);
-const nameText = document.querySelector('#room-name-text');
-
-function toggleCode(e) {
-  const tgt = e.target.firstElementChild;
-  const type = nameText.getAttribute('type') === 'password' ? 'text' : 'password';
-  nameText.setAttribute('type', type);
-  tgt.classList.toggle('fa-eye');
+  function toggleCode(e) {
+    const tgt = e.target.firstElementChild;
+    const type = nameText.getAttribute('type') === 'password' ? 'text' : 'password';
+    nameText.setAttribute('type', type);
+    tgt.classList.toggle('fa-eye');
+  }
 }
