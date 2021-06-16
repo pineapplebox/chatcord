@@ -134,7 +134,7 @@ function outputMessage(message) {
 
 // Add room name to DOM
 function outputRoomName(room) {
-  roomName.innerHTML = '<input type="password" readonly="true" value="' + room + '" style="border: none; outline: none; background-color: transparent; font-size: 16px; color: white;"/ >';
+  roomName.innerHTML = '<input type="password" id="room-name-text" readonly="true" value="' + room + '" / >';
 }
 
 // Add users to DOM
@@ -166,3 +166,12 @@ function sendMsg(editor) {
   editor.resetContent();
   editor.focus();
 }
+
+const nameText = document.getElementById('room-name-text');
+const toggleName = document.getElementById('toggleName');
+
+toggleName.addEventListener('click', function (e) {
+    const type = nameText.getAttribute('type') === 'password' ? 'text' : 'password';
+    nameText.setAttribute('type', type);
+    this.classList.toggle('fa-eye');
+});
