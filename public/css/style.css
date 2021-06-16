@@ -147,7 +147,7 @@ a {
 	font-size: 16px;
 	color: white;
 	position: absolute;
-	max-width: 100px;
+	max-width: calc(20% - 80px);
 }
 
 /* Join Page */
