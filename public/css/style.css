@@ -136,6 +136,7 @@ a {
 	cursor: pointer;
 	font-size: 20px;
 	color: white;
+	z-index: 999;
 }
 
 #room-name-text {
