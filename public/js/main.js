@@ -174,5 +174,6 @@ window.onload = function() {
     const type = nameText.getAttribute('type') === 'password' ? 'text' : 'password';
     nameText.setAttribute('type', type);
     document.getElementById("toggleName").classList.toggle('fa-eye');
+    document.getElementById("toggleName").classList.toggle('fa-eye-slash');
   }
 }
