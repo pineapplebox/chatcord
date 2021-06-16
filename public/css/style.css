@@ -148,6 +148,7 @@ a {
 	color: white;
 	position: absolute;
 	max-width: calc(20% - 80px);
+	letter-spacing: 0.1px;
 }
 
 /* Join Page */
